@@ -20,10 +20,14 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run:
+          cd BestMoviesApplication
+          npm install
 
       - name: Run tests
-        run: npm run test
+        run:
+          npm run test
 
       - name: Build
-        run: npm run build
+        run:
+          npm run build
