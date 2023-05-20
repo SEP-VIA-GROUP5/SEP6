@@ -64,7 +64,7 @@ export class MoviesState {
     // here we will call the API, but for now we have the mocks
     //TODO implement api call
     try {
-      this.allMovies = moviesMock;
+      this.allMovies = await this.moviesService.getNMoviesByVotes(6, 10);
     } catch (e) {
       this.toastrService.show('danger', 'Fetching movies went wrong.');
       console.log(e);
