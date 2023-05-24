@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bestmovies.sep6_project.dao.interfaces.IFavoritesMapper">
-    <resultMap id="result" type="Movie">
-        <result property="id" column="id"/>
-        <result property="title" column="title"/>
-        <result property="year" column="year"/>
-        <result property="userRating" column="rating"/>
-    </resultMap>
-    <select id="getFavorites" resultMap="result">
+    <select id="getFavorites" resultMap="com.bestmovies.sep6_project.dao.interfaces.IMovieMapper.result">
         SELECT m.id, m.title, m.`year`, f.rating
         FROM favorites f
         INNER JOIN movies m ON m.id = f.movie_id

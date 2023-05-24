@@ -8,6 +8,7 @@
         <result property="id" column="id"/>
         <result property="title" column="title"/>
         <result property="year" column="year"/>
+        <result property="userRating" column="rating"/>
     </resultMap>
 
     <select id="getAll" resultMap="result">
