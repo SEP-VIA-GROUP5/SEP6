@@ -12,8 +12,8 @@ jobs:
         uses: actions/checkout@v2
       - name: 'Step 2 - Create api key and Google credentials'
         run: |
-          echo '${{ secrets.API_KEY }}' | base64 --decode > api_key.json
-          echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT }}' | base64 --decode > my-project-1521814632192-74db441a7e07.json
+          echo '${{ secrets.API_KEY }}' | base64 --decode > BestMoviesAPI/main/resources/api_key.json
+          echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT }}' | base64 --decode > BestMoviesAPI/main/resources/my-project-1521814632192-74db441a7e07.json
           echo '${{ secrets.APPLICATION_PROPERTIES }}' | base64 --decode > BestMoviesAPI/main/resources/application.properties
       - name: Step 3 - Set up JDK 17
         uses: actions/setup-java@v1
