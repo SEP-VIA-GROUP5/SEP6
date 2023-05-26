@@ -10,8 +10,8 @@ import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 @Component
 public class RestClient {
@@ -25,12 +25,10 @@ public class RestClient {
     public RestClient(){
         gson = new Gson();
         template = restTemplate();
-        try {
-            JsonReader reader = new JsonReader(new FileReader(fileName));
-            apiKey = gson.fromJson(reader, Key.class);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        InputStream stream = getClass().getResourceAsStream("/api_key.json");
+        assert stream != null;
+        JsonReader reader = new JsonReader(new InputStreamReader(stream));
+        apiKey = gson.fromJson(reader, Key.class);
         headers = new HttpHeaders();
         headers.add("Authorization","Bearer " + apiKey.getApi_bearer());
         headers.add("Content-Type","application/json");
