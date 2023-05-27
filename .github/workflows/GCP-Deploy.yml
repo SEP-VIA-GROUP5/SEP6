@@ -33,13 +33,17 @@ jobs:
         run: |
           echo '${{ secrets.API_KEY }}' | base64 --decode > BestMoviesAPI/main/resources/api_key.json
           echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT }}' | base64 --decode > BestMoviesAPI/main/resources/my-project-1521814632192-74db441a7e07.json
-          echo '${{ secrets.APPLICATION_PROPERTIES }}' | base64 --decode > BestMoviesAPI/main/resources/application.properties 
 
-      - name: Build Docker image
-        run: docker build -f BestMoviesAPI/Dockerfile -t $IMAGE_NAME .
+      - name: debug missing files
+        run: | 
+          cd BestMoviesAPI/main/resources
+          ls -a
 
-      - name: Push Docker image
-        run: docker push $IMAGE_NAME
-
-      - name: Deploy Docker image
-        run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image $IMAGE_NAME --region us-central1 --platform managed
+#      - name: Build Docker image
+#        run: docker build -f BestMoviesAPI/Dockerfile -t $IMAGE_NAME .
+#
+#      - name: Push Docker image
+#        run: docker push $IMAGE_NAME
+#
+#      - name: Deploy Docker image
+#        run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image $IMAGE_NAME --region us-central1 --platform managed
