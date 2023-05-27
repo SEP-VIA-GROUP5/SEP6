@@ -38,7 +38,7 @@ jobs:
       - name: debug missing files
         run: |
           cd BestMoviesAPI/main/resources
-          ls -a
+          cat application.properties 
 
 #      - name: Build Docker image
 #        run: docker build -f BestMoviesAPI/Dockerfile -t $IMAGE_NAME .
