@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {NbToastrService} from "@nebular/theme";
 
 @Component({
   selector: 'bm-search',
@@ -37,13 +38,15 @@ export class BmSearchComponent {
   @Input() isFiltered: boolean;
   @Input() placeHolder: string;
 
-  constructor() {
+  constructor(
+    private nbToastrService: NbToastrService,
+  ) {
   }
 
   onReset(searchInput: string) {
     this.resetSearch.emit();
 
-    //TODO maybe some toastr here that the search was resetted?
+    this.nbToastrService.show('Search has reseted', 'List is not filtered anymore', {status: "success"});
   }
 
   search(searchInput: string) {
