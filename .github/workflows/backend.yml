@@ -17,6 +17,7 @@ jobs:
           echo '${{ secrets.API_KEY }}' | base64 --decode > BestMoviesAPI/main/resources/api_key.json
           echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT }}' | base64 --decode > BestMoviesAPI/main/resources/my-project-1521814632192-74db441a7e07.json
           echo '${{ secrets.APPLICATION_PROPERTIES }}' | base64 --decode > BestMoviesAPI/main/resources/application.properties
+          cat BestMoviesAPI/main/resources/application.properties
       - name: Step 3 - Set up JDK 17
         uses: actions/setup-java@v1
         with:
