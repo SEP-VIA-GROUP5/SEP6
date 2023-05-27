@@ -1,6 +1,5 @@
 export const environment = {
   production: true,
   test: false,
-  //TODO to be added
-  api_url: '',
+  api_url: 'https://my-project-1521814632192-pxhfo77pzq-uc.a.run.app/',
 }
