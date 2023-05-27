@@ -40,8 +40,8 @@ export class RegisterComponent {
 
   register() {
     this.store.dispatch(new AuthRegister(
-      this.userName,
       this.email,
+      this.userName,
       this.firstName,
       this.lastName,
       this.password,

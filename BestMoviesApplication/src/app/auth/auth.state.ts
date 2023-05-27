@@ -76,7 +76,7 @@ export class AuthState {
       return setState(errorState);
     }
     else if(!validatePassword(action.password)) {
-      this.toastrService.show("It should include minimum one uppercase, lowercase letter, one number and one special character", "Password does not meet criteria", {status: "warning"});
+      this.toastrService.show('',"Password does not meet criteria", {status: "warning"});
       return setState(errorState);
     }
     else if (action.repeatedPassword !== action.password) {

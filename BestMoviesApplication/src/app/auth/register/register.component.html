@@ -21,24 +21,23 @@
     </div>
     <div class="form-row">
       <nb-icon nbPrefix icon="shield-outline" pack="eva"></nb-icon>
-      <div class="password">
         <input [type]="getInputType(getCheckType().PASSWORD)" nbInput [(ngModel)]="password" status="primary" placeholder="Password">
         <button nbSuffix nbButton ghost (click)="toggleShowPassword(getCheckType().PASSWORD)">
           <nb-icon [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'" pack="eva" [attr.aria-label]="showPassword ? 'hide password' : 'show password'"></nb-icon>
         </button>
-      </div>
     </div>
     <div class="form-row">
       <nb-icon nbPrefix icon="shield-outline" pack="eva"></nb-icon>
-      <div class="password">
         <input [type]="getInputType(getCheckType().REPEATED_PASSWORD)" nbInput [(ngModel)]="repeatPassword" status="primary" placeholder="Repeat password">
         <button nbSuffix nbButton ghost (click)="toggleShowPassword(getCheckType().REPEATED_PASSWORD)">
           <nb-icon [icon]="showRepeatedPassword ? 'eye-outline' : 'eye-off-2-outline'" pack="eva" [attr.aria-label]="showPassword ? 'hide password' : 'show password'"></nb-icon>
         </button>
-      </div>
+    </div>
+    <div class="form-row extra-row-information">
+      <p>Already having an account? <span (click)="redirectToLoginPage()">Login</span></p>
     </div>
     <div class="form-row">
-      <p>Already having an account? <span (click)="redirectToLoginPage()">Login</span></p>
+      <p class="extra-row-information">Password should include minimum one uppercase, lowercase letter, one number and one special character. Password should have at least 8 characters.</p>
     </div>
   </nb-card-body>
   <nb-card-footer class="card-footer">

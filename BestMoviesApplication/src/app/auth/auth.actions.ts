@@ -2,8 +2,8 @@ export class AuthRegister {
   static readonly type = 'Account - Register';
   constructor(public email: string,
               public userName: string,
-              public lastName: string,
               public firstName: string,
+              public lastName: string,
               public password: string,
               public repeatedPassword: string) {
   }
