@@ -24,6 +24,6 @@ export function getAccountType(accountType: string) {
 const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 export function validatePassword(password: string): boolean {
-  return passPattern.test(password);
+  return passPattern.test(password) && password.length >=8;
 }
 

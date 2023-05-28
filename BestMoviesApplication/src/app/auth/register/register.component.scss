@@ -17,9 +17,16 @@
 .card-body {
   flex-grow: 1;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-self:center;
+  display: table-row;
+  align-self: center;
+}
+
+.extra-row-information {
+  display: block;
+  width: 300px;
+  white-space:pre-line;
+  color: red;
+  font-style:italic;
 }
 
 .form-row {
