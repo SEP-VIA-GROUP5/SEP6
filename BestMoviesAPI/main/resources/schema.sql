@@ -3,6 +3,8 @@ drop table if exists ratings;
 drop table if exists people;
 drop table if exists directors;
 drop table if exists stars;
+drop table if exists users;
+drop table if exists favorites;
 
 CREATE TABLE movies (
                         id INTEGER AUTO_INCREMENT NOT NULL,
