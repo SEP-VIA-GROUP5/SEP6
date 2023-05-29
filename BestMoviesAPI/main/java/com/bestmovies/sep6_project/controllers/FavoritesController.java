@@ -31,12 +31,12 @@ public class FavoritesController {
         setResponse(response, favoritesService.addRatingToMovie(username, movieId, rating));
     }
 
-    @RequestMapping(value = "/remove/rating/{username}/{movieId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/remove/rating/{username}/{movieId}", method = RequestMethod.DELETE)
     public void removeRatingFromMovie(@PathVariable String username, @PathVariable long movieId, HttpServletResponse response) {
         setResponse(response, favoritesService.removeRatingFromMovie(username, movieId));
     }
 
-    @RequestMapping(value = "/remove/{username}/{movieId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/remove/{username}/{movieId}", method = RequestMethod.DELETE)
     public void removeMovieFromFavorites(@PathVariable String username, @PathVariable long movieId, HttpServletResponse response) {
         setResponse(response, favoritesService.removeMovieFromFavorites(username, movieId));
     }
