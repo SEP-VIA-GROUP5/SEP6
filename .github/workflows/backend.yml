@@ -23,7 +23,5 @@ jobs:
           java-version: 17
       - name: Step 4 - Have GitHub Actions Build Maven Project
         run: mvn -B package --file pom.xml
-      - name: Step 5 - List the current directory
-        run: ls -a
-      - name: Step 6 - Run project tests with maven
+      - name: Step 5 - Run project tests with maven
         run: mvn clean test
